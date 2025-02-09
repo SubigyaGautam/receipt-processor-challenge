@@ -4,6 +4,25 @@ Build a webservice that fulfils the documented API. The API is described below. 
 in the [api.yml](./api.yml) file. We will use the described API to test your solution.
 
 Provide any instructions required to run your application.
+--------
+For Development environment
+
+Create virtual environment : python -m venv venv
+Activate the environment : source venv/bin/activate
+Install dependencies : pip install -r requirements.txt
+
+To test / or to deploy using Docker
+Run the docker:
+DOCKER_BUILDKIT=1 docker build .
+
+docker build -t receipt-processor .
+docker run -p 8000:8000 receipt-processor
+docker run -d -p 8000:8000 receipt-processor
+
+Stopping the Docker:
+docker ps  # Get container ID
+docker stop <container_id>
+--------
 
 Data does not need to persist when your application stops. It is sufficient to store information in memory. There are too many different database solutions, we will not be installing a database on our system when testing your application.
 
